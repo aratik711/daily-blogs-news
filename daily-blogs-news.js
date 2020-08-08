@@ -5,14 +5,14 @@ const fs = require('fs');
 const {spawn} = require('child_process');
 
 /**
- * Builds the new readme by replacing the readme's <!-- BLOG-POST-LIST:START --><!-- BLOG-POST-LIST:END --> tags
+ * Builds the new readme by replacing the readme's <!-- BLOG-LIST:START --><!-- BLOG-LIST:END --> tags
  * @param previousContent {string}: actual readme content
  * @param newContent {string}: content to add
  * @return {string}: content after combining previousContent and newContent
  */
 const buildReadme = (previousContent, newContent) => {
   const tagNameInput = core.getInput('comment_tag_name');
-  const tagToLookFor = tagNameInput ? `<!-- ${tagNameInput}:` : `<!-- BLOG-POST-LIST:`;
+  const tagToLookFor = tagNameInput ? `<!-- ${tagNameInput}:` : `<!-- BLOG-LIST:`;
   const closingTag = '-->';
   const startOfOpeningTagIndex = previousContent.indexOf(
     `${tagToLookFor}START`,
@@ -111,8 +111,7 @@ if (feedList.length === 0) {
   process.exit(1);
 }
 
-// filters out every medium comment (PR #4)
-const ignoreMediumComments = (item) => !(item.link.includes('medium.com') && item.categories === undefined);
+const ignoreMediumComments = (item) => !(item.link.includes('sreweekly.com') && item.categories === undefined);
 
 feedList.forEach((siteUrl) => {
   runnerNameArray.push(siteUrl);

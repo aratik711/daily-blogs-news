@@ -1,6 +1,6 @@
-name: 'Blog Post Workflow'
-author: 'Gautam Krishna R'
-description: 'Allows you to show your latest blog posts on your github profile or project readme'
+name: 'Daily Blogs News Workflow'
+author: 'Arati Kulkarni'
+description: 'Allows you to show latest blogs/news in the README'
 
 inputs:
   gh_token:
@@ -36,16 +36,16 @@ inputs:
     required: false
   committer_username:
     description: "Username used while committing to the repo"
-    default: "blog-post-bot"
+    default: "blog-news-bot"
     required: false
   committer_email:
     description: "Email id used while committing to the repo"
-    default: "blog-post-bot@example.com"
+    default: "blog-news-bot@example.com"
     required: false
 
 runs:
   using: node12
-  main: dist/blog-post-workflow.js
+  main: dist/daily-blogs-news.js
 branding:
   icon: 'activity'
   color: 'blue'

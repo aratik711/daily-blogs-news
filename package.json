@@ -1,10 +1,10 @@
 {
-  "name": "blog-post-workflow",
+  "name": "daily-blogs-news",
   "version": "1.1.0",
-  "description": "Allows you to show your latest blog posts on your github profile or project readme",
-  "main": "blog-post-workflow.js",
+  "description": "Allows you to show latest blogs/news in your README",
+  "main": "daily-blogs-news.js",
   "scripts": {
-    "start": "node blog-post-workflow.js",
+    "start": "node daily-blogs-news.js",
     "local-run": "start-server-and-test start-server http://localhost:8080 start-test",
     "start-server": "node test/test-server.js",
     "test-run": "node test.js && diff test/Readme.md test/Readme.md.snap",
@@ -12,11 +12,11 @@
     "test-run-dist": "DIST=true node test.js && diff test/Readme.md test/Readme.md.snap",
     "test-dist": "npm run lint && start-server-and-test start-server http://localhost:8080 test-run-dist",
     "lint": "jshint --exclude='node_modules/' *.js",
-    "build": "parcel build  --no-source-maps --target=node --bundle-node-modules blog-post-workflow.js"
+    "build": "parcel build  --no-source-maps --target=node --bundle-node-modules daily-blogs-news.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gautamkrishnar/blog-post-workflow.git"
+    "url": "git+https://github.com/aratik711/daily-blogs-news.git"
   },
   "keywords": [
     "github",
@@ -24,12 +24,12 @@
     "blog",
     "posts"
   ],
-  "author": "Gautam krishna R <r.gautamkrishna@gmail.com> (http://www.github.com/gautamkrishnar)",
+  "author": "Arati Kulkarni <kkulkarniprasad@gmail.com> (http://www.github.com/aratik711)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/gautamkrishnar/blog-post-workflow/issues"
+    "url": "https://github.com/aratik711/daily-blogs-news/issues"
   },
-  "homepage": "https://github.com/gautamkrishnar/blog-post-workflow#readme",
+  "homepage": "https://github.com/aratik711/daily-blogs-news#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
     "process": "latest",
