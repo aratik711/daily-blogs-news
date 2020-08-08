@@ -4,8 +4,8 @@ const fs = require('fs');
 // language=markdown
 const template = `# Readme test
 Post list example:
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+<!-- BLOG-LIST:START -->
+<!-- BLOG-LIST:END -->
 
 # Other contents
 Test content
@@ -18,7 +18,7 @@ fs.writeFile(path.join(__dirname, 'test', 'Readme.md'), template, () => {
     process.env.INPUT_DISABLE_SORT = "false";
     process.env.INPUT_TEMPLATE = "default";
     process.env.TEST_MODE = "true";
-    const testFile = process.env.DIST ? './dist/blog-post-workflow' :'./blog-post-workflow';
+    const testFile = process.env.DIST ? './dist/daily-blogs-news' :'./daily-blogs-news';
     console.log('Testing: ', testFile);
     require(testFile);
 });
