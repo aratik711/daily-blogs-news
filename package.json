@@ -1,0 +1,43 @@
+{
+  "name": "blog-post-workflow",
+  "version": "1.1.0",
+  "description": "Allows you to show your latest blog posts on your github profile or project readme",
+  "main": "blog-post-workflow.js",
+  "scripts": {
+    "start": "node blog-post-workflow.js",
+    "local-run": "start-server-and-test start-server http://localhost:8080 start-test",
+    "start-server": "node test/test-server.js",
+    "test-run": "node test.js && diff test/Readme.md test/Readme.md.snap",
+    "test": "npm run lint && start-server-and-test start-server http://localhost:8080 test-run",
+    "test-run-dist": "DIST=true node test.js && diff test/Readme.md test/Readme.md.snap",
+    "test-dist": "npm run lint && start-server-and-test start-server http://localhost:8080 test-run-dist",
+    "lint": "jshint --exclude='node_modules/' *.js",
+    "build": "parcel build  --no-source-maps --target=node --bundle-node-modules blog-post-workflow.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gautamkrishnar/blog-post-workflow.git"
+  },
+  "keywords": [
+    "github",
+    "workflow",
+    "blog",
+    "posts"
+  ],
+  "author": "Gautam krishna R <r.gautamkrishna@gmail.com> (http://www.github.com/gautamkrishnar)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/gautamkrishnar/blog-post-workflow/issues"
+  },
+  "homepage": "https://github.com/gautamkrishnar/blog-post-workflow#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "process": "latest",
+    "rss-parser": "^3.8.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.1",
+    "parcel-bundler": "^1.12.4",
+    "start-server-and-test": "^1.11.2"
+  }
+}
